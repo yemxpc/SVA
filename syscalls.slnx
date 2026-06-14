@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="syscalls/syscalls.vcxproj" Id="c23b2a1e-5fba-4599-8793-c422d0d73cd0" />
+</Solution>
