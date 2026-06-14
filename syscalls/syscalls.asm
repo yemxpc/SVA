@@ -1,7 +1,7 @@
 .code
 NtAllocateVirtualMemory proc
     mov r10, rcx
-    mov eax, 18h    ; Windows 10/11 x64 için SSN (numara)
+    mov eax, 18h    
     syscall
     ret
 NtAllocateVirtualMemory endp
