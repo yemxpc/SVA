@@ -61,17 +61,17 @@ int main() {
             &baseAddr,
             &regionSize,
             PAGE_EXECUTE_READ,
-            &oldProtect // NULL yerine bunu kullan
+            &oldProtect 
         );
         if (protectStatus == 0)
         {
             printf("[+] Success Memory Adress:...\n");
 
-            // Buraya thread oluşturma kısmını ekliyoruz:
+            
             HANDLE hThread = CreateThread(
                 NULL,
                 0,
-                (LPTHREAD_START_ROUTINE)baseAddr, // Bellek adresine zıpla
+                (LPTHREAD_START_ROUTINE)baseAddr, 
                 NULL,
                 0,
                 NULL
@@ -79,7 +79,7 @@ int main() {
             WaitForSingleObject(hThread, INFINITE);
 
             if (hThread == NULL) {
-                // Programın hemen kapanmaması için thread'in bitmesini bekle
+               
 				GetLastError();
             }
         }
